@@ -42,4 +42,13 @@ class HomeController extends AbstractController
             'myname' => $name
         ]);
     }
+
+    
+    #[Route('/showParameter')]
+    public function showParameter(): Response
+    {
+        $name = $this->getParameter('appName'); //ce parametre vient de fichier config\packages\framework.yaml
+        $version =  $_ENV['APP_VERSION'] ;  //ce parametre vient de fichier .env
+        return new Response( "nom de l'application : ".$name." / version = ". $version );
+    }
 }

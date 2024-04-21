@@ -8,6 +8,8 @@ framework:
 
     #esi: true
     #fragments: true
+parameters:
+    appName: 'mon app'
 
 when@test:
     framework:
