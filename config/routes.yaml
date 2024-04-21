@@ -1,0 +1,30 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+
+blog_list:
+    path: /blog
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\BlogController::index
+
+
+blog_news:
+    path: /blog/news/{id}/
+    controller: App\Controller\BlogController::news
+    methods:    GET
+
+
+
+blog_news_pays_category:
+    path: /blog/news/pays/{pays}/category/{category}
+    controller: App\Controller\BlogController::newsPaysCategory
+    methods:    GET|POST
+
+
+blog_news_per_date:
+    path: /blog/news/{begindate}/{enddate}
+    controller: App\Controller\BlogController::newsPerDates
+    methods:    GET
